@@ -1,4 +1,4 @@
-import { DropDownBox, Search } from "@/components";
+import { DropDownBox, Search, Button } from "@/components";
 
 export default function Header() {
   return (
@@ -21,6 +21,8 @@ export default function Header() {
                 // onSearch={handleSearch}
                 className="w-50"
               />
+              <span className="w-0 h-10 mx-5 outline outline-[1px] outline-zinc-800"></span>
+              <Button text="로그인" className="w-20 h-10" />
             </div>
           </div>
         </div>
