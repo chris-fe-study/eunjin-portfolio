@@ -1,9 +1,10 @@
 import { Link, Outlet } from "react-router";
+import { Header } from "./header";
 
 export default function MainLayout() {
   return (
     <div>
-      <header>
+      <Header>
         <ul>
           <li>
             <Link to="/">Home</Link>
@@ -18,7 +19,7 @@ export default function MainLayout() {
             <Link to="/feedback">Feedback</Link>
           </li>
         </ul>
-      </header>
+      </Header>
       <Outlet />
     </div>
   );
