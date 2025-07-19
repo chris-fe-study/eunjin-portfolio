@@ -1,16 +1,26 @@
-import { DropDownBox } from "@/components";
+import { DropDownBox, Search } from "@/components";
 
 export default function Header() {
   return (
     <header>
-      <div className="flex items-center justify-between h-19">
-        <div className="bg-[#121214] text-white w-full h-full p-5">
-          <div className="flex justify-start w-[70px] h-full">
-            <div className="flex items-center text-white text-2xl font-bold font-['Inter'] w-full h-full">
-              LOGO
+      <div className="h-19">
+        <div className="flex justify-between  bg-[#121214] text-white w-full h-full px-5">
+          <div className="flex justify-start w-full h-full">
+            <div className=" w-[70px] h-full">
+              <div className="flex items-center text-white text-2xl font-bold font-['Inter'] w-full h-full">
+                LOGO
+              </div>
             </div>
             <div className="flex items-center mx-15">
-              <DropDownBox />
+              <DropDownBox className="h-7 w-50 " />
+            </div>
+          </div>
+          <div className="flex justify-end w-full h-full">
+            <div className="flex items-center">
+              <Search
+                // onSearch={handleSearch}
+                className="w-50"
+              />
             </div>
           </div>
         </div>

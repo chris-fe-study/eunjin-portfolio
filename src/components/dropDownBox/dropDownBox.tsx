@@ -14,10 +14,12 @@ const locations: Location[] = [
 
 interface LocationDropBoxProps {
   onLocationChange?: (Location: Location) => void;
+  className?: string;
 }
 
 export default function DropDownBox({
   onLocationChange,
+  className = "",
 }: LocationDropBoxProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedLocation, setSelectedLocation] = useState<Location>(
@@ -31,11 +33,11 @@ export default function DropDownBox({
   };
 
   return (
-    <div className={`relative`}>
+    <div className={`relative ${className}`}>
       {/* 드롭다운 버튼 */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="h-7 w-40 px-5 flex items-center justify-between bg-gray-900  hover:bg-gray-800 transition-colors duration-200"
+        className="w-full h-full px-5 flex items-center justify-between bg-gray-900  hover:bg-gray-800 transition-colors duration-200"
       >
         <span className="text-left text-neutral-400 text-sm font-normal font-['Inter']">
           {selectedLocation.city}
