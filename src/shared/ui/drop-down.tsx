@@ -17,7 +17,7 @@ interface LocationDropBoxProps {
   className?: string;
 }
 
-export default function DropDownBox({
+export default function DropDown({
   onLocationChange,
   className = "",
 }: LocationDropBoxProps) {

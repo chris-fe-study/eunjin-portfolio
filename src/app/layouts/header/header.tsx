@@ -1,4 +1,4 @@
-import { DropDownBox, Search, Button } from "@/components";
+import { DropDown, Search, Button } from "@/shared";
 
 export default function Header() {
   return (
@@ -12,7 +12,7 @@ export default function Header() {
               </div>
             </div>
             <div className="flex items-center mx-15">
-              <DropDownBox className="h-7 w-50 " />
+              <DropDown className="h-7 w-50 " />
             </div>
           </div>
           <div className="flex justify-end w-full h-full">
