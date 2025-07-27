@@ -1,5 +1,5 @@
-import { DropDown, Search } from "@/shared";
-import HeaderLoginButton from "./header-login-button";
+import { Search } from "@/shared";
+import { HeaderLocaleSelect, HeaderLoginButton } from "@/features";
 
 export default function Header() {
   return (
@@ -12,7 +12,7 @@ export default function Header() {
             </div>
           </div>
           <div className="flex items-center mx-15">
-            <DropDown className="h-7 w-50 " />
+            <HeaderLocaleSelect />
           </div>
         </div>
         <div className="flex justify-end w-full h-full">
@@ -22,7 +22,7 @@ export default function Header() {
               className="w-50"
             />
             <span className="w-0 h-10 mx-5 outline-1 outline-zinc-800"></span>
-            <HeaderLoginButton children="로그인" />
+            <HeaderLoginButton>로그인</HeaderLoginButton>
           </div>
         </div>
       </div>
