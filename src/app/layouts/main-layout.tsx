@@ -1,4 +1,4 @@
-import { Link, Outlet } from "react-router";
+import { Outlet } from "react-router";
 import { Header } from "./header";
 import { Side } from "./side";
 

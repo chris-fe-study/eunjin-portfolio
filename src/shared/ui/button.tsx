@@ -1,21 +1,26 @@
-import React from "react";
+import * as React from "react";
+import { Slot } from "@radix-ui/react-slot";
+import { type VariantProps } from "class-variance-authority";
+import { cn } from "@/shared/utils/shadcn-utils";
+import { buttonVariants } from "@/shared";
 
-interface ButtonProps {
-  text: string;
-  className?: string;
-}
+export default function Button({
+  className,
+  variant,
+  size,
+  asChild = false,
+  ...props
+}: React.ComponentProps<"button"> &
+  VariantProps<typeof buttonVariants> & {
+    asChild?: boolean;
+  }) {
+  const Comp = asChild ? Slot : "button";
 
-export default function Button({ text, className }: ButtonProps) {
   return (
-    <div className={`relative ${className}`}>
-      <button
-        type="button"
-        className="absolute w-full h-full rounded-[100px] inline-flex justify-center items-center gap-2.5 bg-blue-600 hover:bg-blue-400"
-      >
-        <span className="justify-start text-white text-base font-bold font-['Inter']">
-          {text}
-        </span>
-      </button>
-    </div>
+    <Comp
+      data-slot="button"
+      className={cn(buttonVariants({ variant, size, className }))}
+      {...props}
+    />
   );
 }
