@@ -39,7 +39,7 @@ export default function Search({
           value={searchTerm}
           onChange={handleInputChange}
           placeholder={placeholder}
-          className="w-full px-4 py-3 pl-4 pr-12 bg-black border border-gray-700 rounded-full text-gray-100 placeholder-gray-400 focus:outline-none focus:border-gray-500"
+          className="w-full h-10 px-4 py-3 pl-4 pr-12 bg-black border border-gray-700 rounded-full text-gray-100 placeholder-gray-400 focus:outline-none focus:border-gray-500"
         />
 
         {/* 검색 아이콘 (오른쪽) */}
@@ -49,7 +49,7 @@ export default function Search({
           className="absolute right-3 top-1/2 transform -translate-y-1/2 "
         >
           <svg
-            className="w-5 h-5 text-gray-400 hover:text-gray-300"
+            className="w-4 h-4 text-gray-400 hover:text-gray-300"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"

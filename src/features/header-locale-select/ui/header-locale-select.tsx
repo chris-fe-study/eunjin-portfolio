@@ -19,7 +19,7 @@ export default function HeaderLocaleSelect() {
       defaultValue={String(firstLocation.id)}
       onValueChange={handleLocationChange}
     >
-      <SelectTrigger className="w-50 h-7">
+      <SelectTrigger className="w-50 h-6 border-neutral-700">
         <SelectValue placeholder="Select a location" />
       </SelectTrigger>
       <SelectContent>
