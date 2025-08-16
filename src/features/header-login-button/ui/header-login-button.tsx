@@ -1,4 +1,4 @@
-import { Button } from "@/shared";
+import { Button } from "@/shared/ui";
 import type { PropsWithChildren } from "react";
 
 export default function HeaderLoginButton({ children }: PropsWithChildren) {

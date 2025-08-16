@@ -5,7 +5,7 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/shared";
+} from "@/shared/ui";
 import { locations, firstLocation } from "../constants";
 
 export default function HeaderLocaleSelect() {

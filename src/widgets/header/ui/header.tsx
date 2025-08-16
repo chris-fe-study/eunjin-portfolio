@@ -1,4 +1,4 @@
-import { Search } from "@/shared";
+import { Search } from "@/shared/ui";
 import { HeaderLocaleSelect, HeaderLoginButton } from "@/features";
 
 export default function Header() {
