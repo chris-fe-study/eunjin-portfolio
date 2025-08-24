@@ -1,5 +1,5 @@
 import { Outlet } from "react-router";
-import { Header } from "@/widgets";
+import { Header } from "./header";
 import { Side } from "./side";
 
 export default function MainLayout() {

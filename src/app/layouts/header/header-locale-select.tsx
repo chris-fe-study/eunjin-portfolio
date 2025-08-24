@@ -6,7 +6,21 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/shared/ui";
-import { locations, firstLocation } from "../constants";
+
+type Location = {
+  id: number;
+  city: string;
+};
+
+const locations: Location[] = [
+  { id: 0, city: "전체" },
+  { id: 1, city: "서울" },
+  { id: 2, city: "경기" },
+  { id: 3, city: "부산" },
+  { id: 4, city: "제주도" },
+] as const;
+
+const firstLocation = locations[0];
 
 export default function HeaderLocaleSelect() {
   const [selectedId, setSelectedId] = useState<number>(firstLocation.id);

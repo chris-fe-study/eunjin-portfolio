@@ -1,5 +1,6 @@
-import { Search } from "@/shared/ui";
-import { HeaderLocaleSelect, HeaderLoginButton } from "@/features";
+import HeaderGlobalSearch from "./header-global-search";
+import HeaderLoginButton from "./header-login-button";
+import HeaderLocaleSelect from "./header-locale-select";
 
 export default function Header() {
   return (
@@ -17,10 +18,11 @@ export default function Header() {
         </div>
         <div className="flex justify-end w-full h-full">
           <div className="flex items-center">
-            <Search
+            <HeaderGlobalSearch />
+            {/* <Search
               // onSearch={handleSearch}
               className="w-50"
-            />
+            /> */}
             <span className="w-0 h-10 mx-5 outline-1 outline-zinc-800"></span>
             <HeaderLoginButton>로그인</HeaderLoginButton>
           </div>
