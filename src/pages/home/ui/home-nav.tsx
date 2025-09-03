@@ -1,5 +1,5 @@
 import { DateBadge } from "@/shared/ui";
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 interface HomeNavProps {
   images: string[];

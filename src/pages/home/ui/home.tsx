@@ -4,8 +4,6 @@ import { DatePicker } from "@/shared/ui/date-picker";
 import HomeNav from "./home-nav";
 import Category from "./Category";
 import CardList from "./card-list";
-// import dayjs from "dayjs";
-import { useState } from "react";
 
 export default function HomePage() {
   const imageList = [
