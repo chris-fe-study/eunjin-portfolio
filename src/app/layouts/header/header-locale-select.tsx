@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import {
   Select,
   SelectContent,
@@ -23,7 +23,7 @@ const locations: Location[] = [
 const firstLocation = locations[0];
 
 export default function HeaderLocaleSelect() {
-  const [selectedId, setSelectedId] = useState<number>(firstLocation.id);
+  const [, setSelectedId] = useState<number>(firstLocation.id);
 
   const handleLocationChange = (id: string) => {
     setSelectedId(Number(id));

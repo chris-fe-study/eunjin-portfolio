@@ -4,8 +4,6 @@ import { DatePicker } from "@/shared/ui/date-picker";
 import HomeNav from "./home-nav";
 import Category from "./category";
 import CardList from "./card-list";
-import dayjs from "dayjs";
-import { useState } from "react";
 
 export default function HomePage() {
   const imageList = [
@@ -27,10 +25,10 @@ export default function HomePage() {
       date: { start: "2025년 10월 5일", end: "2025년 10월 12일" },
     },
   ];
-  const [filterDate, setFilterDate] = useState({
-    start: new Date(),
-    end: new Date(),
-  });
+  // const [filterDate, setFilterDate] = useState({
+  //   start: new Date(),
+  //   end: new Date(),
+  // });
   return (
     <div className="w-full h-full px-7 py-5 bg-neutral-900 ">
       {/* 카테고리 탭 */}
