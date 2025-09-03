@@ -5,7 +5,7 @@ import HeaderLocaleSelect from "./header-locale-select";
 export default function Header() {
   return (
     <header>
-      <div className="flex justify-between  bg-gray-900 text-white w-full h-16 px-5">
+      <div className="flex justify-between bg-[#121214] text-white w-full h-16 px-5">
         <div className="flex justify-start w-full h-full">
           <div className=" w-17.5 h-full">
             <div className="flex items-center text-white text-2xl font-bold font-['Inter'] w-full h-full">

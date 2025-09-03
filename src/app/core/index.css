@@ -4,3 +4,9 @@
 body {
   @apply bg-gray-950;
 }
+
+.rdp-day_button {
+  @apply data-[range-middle=true]:bg-transparent data-[range-middle=true]:text-white;
+  @apply data-[range-start=true]:bg-blue-600 data-[range-start=true]:text-white rounded-full;
+  @apply data-[range-end=true]:bg-blue-600 data-[range-end=true]:text-white rounded-full;
+}
