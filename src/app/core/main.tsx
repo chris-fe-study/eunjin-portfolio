@@ -3,10 +3,16 @@ import { createRoot } from "react-dom/client";
 import { Router } from "../routes";
 import "./index.css";
 
-console.log("process.env.NODE_ENV", process.env.NODE_ENV);
+async function enableMocking() {
+  const { worker } = await import("./mock-worker");
 
-createRoot(document.getElementById("root")!).render(
-  <StrictMode>
-    <Router />
-  </StrictMode>
-);
+  return worker.start();
+}
+
+enableMocking().then(() => {
+  createRoot(document.getElementById("root")!).render(
+    <StrictMode>
+      <Router />
+    </StrictMode>
+  );
+});

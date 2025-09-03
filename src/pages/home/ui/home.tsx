@@ -4,8 +4,21 @@ import { DatePicker } from "@/shared/ui/date-picker";
 import HomeNav from "./home-nav";
 import Category from "./category";
 import CardList from "./card-list";
+import { useEffect, useState } from "react";
+import { type Event } from "@/entities/events/model";
+import { getEvents } from "@/entities/events/api";
 
 export default function HomePage() {
+  const [events, setEvents] = useState<Event[]>([]);
+
+  useEffect(() => {
+    const fetchEvents = async () => {
+      const events = await getEvents();
+      setEvents(events);
+    };
+    fetchEvents();
+  }, []);
+
   const imageList = [
     "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80",
     "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=800&q=80",
