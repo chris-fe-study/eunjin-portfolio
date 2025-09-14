@@ -1,1 +1,1 @@
-export { getEvents } from "./events.api";
+export { getEvents, getEventsBanner } from "./events.api";

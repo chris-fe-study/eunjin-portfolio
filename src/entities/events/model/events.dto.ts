@@ -8,6 +8,8 @@ export interface Event {
     start: string;
     end: string;
   };
+  description: string;
+  tags: string[];
 }
 
 export type EventsResponse = ResponseDto<Event[]>;

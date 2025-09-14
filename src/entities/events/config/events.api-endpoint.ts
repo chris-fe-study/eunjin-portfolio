@@ -1,3 +1,8 @@
+const versionPrefix = {
+  events: "events",
+};
+
 export const eventApiEndpoint = {
-  events: () => `/events`,
+  events: () => `/${versionPrefix.events}`,
+  eventsBanner: () => `/${versionPrefix.events}/banner`,
 };

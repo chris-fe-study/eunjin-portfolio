@@ -1,10 +1,13 @@
 import { eventApiEndpoint, eventsMockData } from "../config";
 import { http, HttpResponse } from "msw";
-
-const baseUrl = import.meta.env.VITE_BASE_API_URL;
+import { env } from "@/shared/config/env";
 
 export const eventsMockHandlers = [
-  http.get(`${baseUrl}${eventApiEndpoint.events()}`, () => {
+  http.get(`${env.apiBaseUrl}${eventApiEndpoint.events()}`, () => {
     return HttpResponse.json(eventsMockData);
+  }),
+  http.get(`${env.apiBaseUrl}${eventApiEndpoint.eventsBanner()}`, () => {
+    const bannerEvents = eventsMockData.data.slice(0, 3);
+    return HttpResponse.json({ data: bannerEvents });
   }),
 ];

@@ -126,14 +126,6 @@ export default function CardList() {
       tags: ["애니메이션", "게임"],
       image: "https://placehold.co/548x111",
     },
-    {
-      title: "SPY×FAMILY - 2025년 8월 9일부터 개최! (가상)",
-      date: { start: "2025년 8월 9일", end: "2025년 8월 9일" },
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      tags: ["애니메이션", "게임"],
-      image: "https://placehold.co/548x111",
-    },
   ];
 
   // 현재 페이지에 해당하는 카드들 계산

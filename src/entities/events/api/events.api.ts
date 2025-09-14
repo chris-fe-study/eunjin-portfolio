@@ -6,3 +6,10 @@ export const getEvents = async () => {
   const result = await publicApi.get<EventsResponse>(eventApiEndpoint.events());
   return result.data.data;
 };
+
+export const getEventsBanner = async () => {
+  const result = await publicApi.get<EventsResponse>(
+    eventApiEndpoint.eventsBanner()
+  );
+  return result.data.data;
+};
