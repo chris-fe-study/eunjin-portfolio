@@ -1,22 +1,22 @@
 import { DateBadge } from "@/shared/ui";
 import { useEffect, useRef, useState } from "react";
-
 interface HomeNavProps {
-  images: string[];
-  event: {
+  events: {
+    id: number;
+    imageUrl: string;
     title: string;
     date: { start: string; end: string };
   }[];
   className: string;
 }
 
-export default function HomeNav({ images, event, className }: HomeNavProps) {
+export default function HomeNav({ events, className }: HomeNavProps) {
   const [current, setCurrent] = useState(1);
   const [transition, setTransition] = useState(true);
   const timeoutRef = useRef<number | null>(null);
-  const total = images.length;
+  const total = events.length;
 
-  const slides = [images[total - 1], ...images, images[0]];
+  const slides = [events[total - 1], ...events, events[0]];
 
   // 자동 슬라이드
   useEffect(() => {
@@ -78,7 +78,7 @@ export default function HomeNav({ images, event, className }: HomeNavProps) {
         {slides.map((src, idx) => (
           <img
             key={idx}
-            src={src}
+            src={src.imageUrl}
             alt={`slide-${idx}`}
             className="w-full h-full object-cover flex-shrink-0"
             style={{ minWidth: "100%" }}
@@ -105,7 +105,7 @@ export default function HomeNav({ images, event, className }: HomeNavProps) {
           if (current === 0) actualIndex = total - 1;
           if (current === total + 1) actualIndex = 0;
 
-          const currentEvent = event[actualIndex] || event[0];
+          const currentEvent = events[actualIndex] || events[0];
 
           return (
             <div>
@@ -127,7 +127,7 @@ export default function HomeNav({ images, event, className }: HomeNavProps) {
         })()}
       </div>
       <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2">
-        {images.map((_, idx) => (
+        {events.map((_, idx) => (
           <button
             key={idx}
             onClick={() => goTo(idx)}
@@ -140,6 +140,7 @@ export default function HomeNav({ images, event, className }: HomeNavProps) {
       `}
           />
         ))}
+        1
       </div>
     </div>
   );

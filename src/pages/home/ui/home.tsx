@@ -7,9 +7,11 @@ import CardList from "./card-list";
 import { useEffect, useState } from "react";
 import { type Event } from "@/entities/events/model";
 import { getEvents } from "@/entities/events/api";
+import { getEventList } from "@/entities/events/api/event-list.api";
 
 export default function HomePage() {
   const [events, setEvents] = useState<Event[]>([]);
+  const [eventList, setEventList] = useState<EventList[]>([]);
 
   useEffect(() => {
     const fetchEvents = async () => {
@@ -19,29 +21,13 @@ export default function HomePage() {
     fetchEvents();
   }, []);
 
-  const imageList = [
-    "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80",
-    "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=800&q=80",
-    "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=800&q=80",
-  ];
-  const eventList = [
-    {
-      title: "SPY×FAMILY - 2025년 8월 9일부터 개최! (가상)",
-      date: { start: "2025년 8월 9일", end: "2025년 8월 15일" },
-    },
-    {
-      title: "원피스 - 2025년 9월 20일부터 개최! (가상)",
-      date: { start: "2025년 9월 20일", end: "2025년 9월 25일" },
-    },
-    {
-      title: "나루토 - 2025년 10월 5일부터 개최! (가상)",
-      date: { start: "2025년 10월 5일", end: "2025년 10월 12일" },
-    },
-  ];
-  // const [filterDate, setFilterDate] = useState({
-  //   start: new Date(),
-  //   end: new Date(),
-  // });
+  useEffect(() => {
+    const fetchEventList = async () => {
+      const eventList = await getEventList();
+      setEventList(eventList);
+    };
+    fetchEventList();
+  }, []);
   return (
     <div className="w-full h-full px-7 py-5 bg-neutral-900 ">
       {/* 카테고리 탭 */}
@@ -59,8 +45,7 @@ export default function HomePage() {
       </div>
       {/* 다가오는 행사 */}
       <HomeNav
-        images={imageList}
-        event={eventList}
+        events={events}
         className="w-full mx-auto h-72 overflow-hidden rounded-lg bg-black"
       />
       {/* 행사 정보 */}
