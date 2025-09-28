@@ -1,5 +1,4 @@
-import { DateBadge } from "@/shared/ui";
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import { eventsQueries } from "../api";
@@ -7,7 +6,7 @@ import { useQuery } from "@tanstack/react-query";
 
 export default function HomeEventBanner() {
   const [slideRef, slideApi] = useEmblaCarousel({ loop: true }, [Autoplay()]);
-  const { data } = useQuery(eventsQueries.getEventsBanner());
+  const { data: banners } = useQuery(eventsQueries.getEventsBanner());
 
   const scrollPrev = useCallback(() => {
     if (slideApi) slideApi.scrollPrev();
@@ -16,8 +15,6 @@ export default function HomeEventBanner() {
   const scrollNext = useCallback(() => {
     if (slideApi) slideApi.scrollNext();
   }, [slideApi]);
-
-  console.log(data);
 
   // const [current, setCurrent] = useState(1);
   // const [transition, setTransition] = useState(true);
@@ -66,9 +63,20 @@ export default function HomeEventBanner() {
     <div className="embla">
       <div className="embla__viewport overflow-hidden" ref={slideRef}>
         <div className="embla__container flex">
-          <div className="embla__slide flex w-full">1</div>
-          <div className="embla__slide flex w-full">2</div>
-          <div className="embla__slide flex w-full">3</div>
+          {banners?.map((banner) => (
+            <div
+              className="embla__slide flex-[0_0_100%] min-w-0 rounded-2xl overflow-hidden relative"
+              key={banner.id}
+            >
+              {/*타이틀하고 날짜 정보 구현*/}
+              {/* prev, next 버튼 구현*/}
+              <img
+                src={banner.imageUrl}
+                alt={banner.title}
+                className="w-full h-[300px] object-cover"
+              />
+            </div>
+          ))}
         </div>
       </div>
       <button className="embla__prev text-white" onClick={scrollPrev}>
