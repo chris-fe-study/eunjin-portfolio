@@ -7,6 +7,8 @@ import AppstoreBlackBadge from "./assets/appstore-black-badge.svg?react";
 import AppstoreBadge from "./assets/appstore-badge.svg?react";
 import GoogleplayBlackBadge from "./assets/googleplay-black-badge.svg?react";
 import GoogleplayBadge from "./assets/googleplay-badge.svg?react";
+import HomeBannerNext from "./assets/home-banner-next.svg?react";
+import HomeBannerPrev from "./assets/home-banner-prev.svg?react";
 
 export const svgMapper = {
   chat: ChatIcon,
@@ -18,6 +20,8 @@ export const svgMapper = {
   appstoreBadge: AppstoreBadge,
   googleplayBlackBadge: GoogleplayBlackBadge,
   googleplayBadge: GoogleplayBadge,
+  homeBannerNext: HomeBannerNext,
+  homeBannerPrev: HomeBannerPrev,
 };
 
 export type SvgNameType = keyof typeof svgMapper;
