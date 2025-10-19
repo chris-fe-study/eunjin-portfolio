@@ -8,9 +8,12 @@ import {
 import { cn } from "@/shared/lib/shadcn-utils";
 import { Button, buttonVariants } from "@/shared/ui";
 
-function Pagination({ className, ...props }: React.ComponentProps<"nav">) {
+export function Pagination({
+  className,
+  ...props
+}: React.ComponentProps<"div">) {
   return (
-    <nav
+    <div
       role="navigation"
       aria-label="pagination"
       data-slot="pagination"
@@ -20,7 +23,7 @@ function Pagination({ className, ...props }: React.ComponentProps<"nav">) {
   );
 }
 
-function PaginationContent({
+function PaginationNumberList({
   className,
   ...props
 }: React.ComponentProps<"ul">) {
@@ -33,7 +36,7 @@ function PaginationContent({
   );
 }
 
-function PaginationItem({ ...props }: React.ComponentProps<"li">) {
+function PaginationNumberItem({ ...props }: React.ComponentProps<"li">) {
   return <li data-slot="pagination-item" {...props} />;
 }
 
@@ -117,10 +120,9 @@ function PaginationEllipsis({
 }
 
 export {
-  Pagination,
-  PaginationContent,
+  PaginationNumberList,
   PaginationLink,
-  PaginationItem,
+  PaginationNumberItem,
   PaginationPrevious,
   PaginationNext,
   PaginationEllipsis,

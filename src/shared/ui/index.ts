@@ -9,3 +9,8 @@ export * from "./badge";
 export * from "./DateBadge";
 export * from "./TagBadge";
 export * from "./pagination";
+export {
+  Pagination,
+  PaginationNumberList,
+  PaginationNumberItem,
+} from "./pagination";

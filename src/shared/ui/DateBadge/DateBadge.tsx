@@ -10,9 +10,7 @@ export default function DateBadge({
 }: DateBadgeProps) {
   return (
     <div className="w-37 h-7 duration-300 flex justify-start items-center bg-gray-900 rounded-full border-2 border-gray-600">
-      <p className="w-7.5 px-2 flex">
-        <SvgIcon name="calendar" className="size-full" />
-      </p>
+      <SvgIcon name="calendar" className="size-5 mr-1" />
       <p className="text-gray-300 text-neutral-400 text-sm font-normal font-['Inter']">
         {date}
       </p>

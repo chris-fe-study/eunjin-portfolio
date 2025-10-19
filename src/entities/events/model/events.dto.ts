@@ -1,4 +1,4 @@
-import type { ResponseDto } from "@/shared/model";
+import type { ResponseDto, PaginatedResponseDto } from "@/shared/model";
 
 export interface Event {
   id: number;
@@ -13,3 +13,4 @@ export interface Event {
 }
 
 export type EventsResponse = ResponseDto<Event[]>;
+export type PaginatedEventsResponse = PaginatedResponseDto<Event[]>;
